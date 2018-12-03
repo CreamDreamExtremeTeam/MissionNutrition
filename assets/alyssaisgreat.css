@@ -23,3 +23,10 @@ body {
     background-image: url('images/dancingoreo.gif');
     background-size: cover;
 }
+
+.row {
+    background-color: black;
+    font-family: 'impossible_-_0regular';
+    color: red;
+    font-size: 30px;
+}
