@@ -14,6 +14,8 @@ var database = firebase.database();
 //Initial Values
 var nutrition = "";
 var limit = "";
+var calories = "";
+var count = "";
 
 // Capture Button Click for food
 $("add-food").on("click", function (foodEvent) {
@@ -21,9 +23,13 @@ $("add-food").on("click", function (foodEvent) {
 
    // Grabbed values from text boxes
    nutrition = $('nutrition-input').val().trim();
+   calories = $('.nf-pr').val().trim();
+   count = $('.nf-unitQuantityBox').val().trim;
    // Code to handel the push
    database.ref().push({
       nutrition: nutrition,
+      carlories: carlories,
+      count: count,
 
    });
 });
@@ -49,15 +55,21 @@ database.ref().on("child_added", function (snapshot) {
    var sv = snapshot.val();
 
    var nutritionElem = $("<h4>");
-   var limitElem = $("<4>");
+   var caloriesElem = $("<h4>");
+   var countElem = $("<h4>");
+   var limitElem = $("<h4>");
 
    nutritionElem.text(sv.nutrition);
+   caloriesElem.text(sv.calories);
+   countElem.text(sv.count);
    limitElem.text(sv.limit);
 
    nutritionElem.append(nutritionElem);
+   caloriesElem.append(caloriesElem);
+   countElem.append(countElem);
    limitElem.append(limitElem);
 
    // Handle the errors
-}, function (errorObject) {
-   console.log("Errors handled: :" + errorObject.code);
+// }, function (errorObject) {
+//    console.log("Errors handled: :" + errorObject.code);
 });
