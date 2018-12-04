@@ -1,3 +1,6 @@
+html {
+    height: 100%;
+}
 body { 
     background-image: -webkit-gradient(
         linear,
@@ -7,7 +10,7 @@ body {
         color-stop(0.45, #BCE1AB),
         color-stop(0.55, #BCE1AB),
         color-stop(1, #569238)
-    ) no-repeat center center fixed;
+    ) ;
     background-image: -o-linear-gradient(bottom, #569238 0%, #BCE1AB 45%, #BCE1AB 55%, #569238 100%);
     background-image: -moz-linear-gradient(bottom, #569238 0%, #BCE1AB 45%, #BCE1AB 55%, #569238 100%);
     background-image: -webkit-linear-gradient(bottom, #569238 0%, #BCE1AB 45%, #BCE1AB 55%, #569238 100%);
@@ -17,7 +20,10 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-    
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
 }
 
 .header-4{ 
