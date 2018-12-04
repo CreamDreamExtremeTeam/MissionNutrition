@@ -19,7 +19,7 @@ var count = "";
 
 // Capture Button Click for food
 $("#add-food").on("click", function (foodEvent) {
-   foodDvent.preventDefault();
+   foodEvent.preventDefault();
 
    // Grabbed values from text boxes
    nutrition = $('#nutrition-input').val().trim();
