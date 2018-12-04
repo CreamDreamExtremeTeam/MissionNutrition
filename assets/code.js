@@ -1,8 +1,6 @@
 $(document).ready(main);
 var foodArray = [];
 
-var foodArray = [];
-
 function main() {
     $("#add-food").on("click", function (event) {
         event.preventDefault();
@@ -33,6 +31,7 @@ function main() {
                 foodImage.attr("width", "266px");
                 foodImage.attr("height", "133px");
                 foodImage.addClass("images");
+                foodImage.attr("data-name", foodInput)
 
                 foodDiv.append(foodImage);
 
@@ -91,3 +90,15 @@ function createNutritionLabel(foodArr) {
     });
     return div;
 }
+
+$(".images").on("click", function(){
+   var key = "OhZvd5m3Bz8gbjnHIf8IBQOvBI9szvQy";
+  
+   var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" + this.attr("data-name")+ "&api_key=" + key + "&limit=1";
+   $.ajax({
+      url: queryURL,
+      method: "GET"
+  })
+  this.attr("src", results.images.fixed_height.url);
+  
+  })
