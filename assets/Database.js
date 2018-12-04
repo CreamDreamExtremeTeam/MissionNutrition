@@ -54,8 +54,10 @@ database.ref().on("child_added", function (snapshot) {
    nutritionElem.text(sv.nutrition);
    limitElem.text(sv.limit);
 
+   nutritionElem.append(nutritionElem);
+   limitElem.append(limitElem);
 
-
+   // Handle the errors
 }, function (errorObject) {
    console.log("Errors handled: :" + errorObject.code);
 });
