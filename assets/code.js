@@ -1,6 +1,8 @@
 $(document).ready(main);
 var foodArray = [];
 
+var foodArray = [];
+
 function main() {
     $("#add-food").on("click", function (event) {
         event.preventDefault();
