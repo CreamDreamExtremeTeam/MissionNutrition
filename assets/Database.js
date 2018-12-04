@@ -17,22 +17,22 @@
 // var calories = "";
 // var count = "";
 
-// // Capture Button Click for food
-// $("#add-food").on("click", function (foodEvent) {
-//    foodEvent.preventDefault();
+// Capture Button Click for food
+$("#add-food").on("click", function (foodEvent) {
+   foodEvent.preventDefault();
 
-//    // Grabbed values from text boxes
-//    nutrition = $('#nutrition-input').val().trim();
-//    console.log(nutrition);
-//    calories = $('.nf_calories').val().trim();
-//    console.log(calories);
-//    count = $('.nf-unitQuantityBox').val().trim();
-//    console.log(count);
-//    // Code to handel the push
-//    database.ref().push({
-//       nutrition: nutrition,
-//       carlories: carlories,
-//       count: count,
+   // Grabbed values from text boxes
+   nutrition = $('#nutrition-input').val().trim();
+   console.log(nutrition);
+   calories = $('.nf_pr').val();
+   console.log(calories);
+   count = $('.nf-unitQuantityBox').val();
+   console.log(count);
+   // Code to handel the push
+   database.ref().push({
+      nutrition: nutrition,
+      carlories: carlories,
+      count: count,
 
 //    });
 // });
