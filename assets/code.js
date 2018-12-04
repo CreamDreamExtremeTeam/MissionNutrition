@@ -36,7 +36,7 @@ function main() {
 
                 foodDiv.append(foodImage);
 
-                block.append(foodDiv);
+                block.prepend(foodDiv);
             })
 
         addFood(foodInput, block);
