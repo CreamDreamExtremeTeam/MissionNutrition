@@ -1,5 +1,5 @@
 body { 
-    background: url(images/background.jpg) no-repeat center center fixed; 
+   background: url(images/background.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -18,9 +18,9 @@ body {
 }
 
 h1{
-    position: relative;
-    float: left;
-    margin-left: 270px;
+   position: relative;
+   float: left;
+   margin-left: 270px;
    margin-top: 80px;
    text-align: center;
    font-family: sans-serif;
@@ -41,7 +41,13 @@ h1{
     color: rgb(41, 13, 54);      
 }
 
-
+.images {
+    padding:2px;
+    border: rgb(41, 13, 54) 2px solid;
+    padding: 5px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
 
 
 .row {
@@ -57,4 +63,6 @@ h1{
     flex-wrap: wrap;
     padding: 5px;
     margin: 5px;
+    margin-top: 50px;
+    
 }
