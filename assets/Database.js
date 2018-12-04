@@ -51,6 +51,6 @@ limitElem.text(sv.limit);
 
 
 
-function(errorObject){
+}, function(errorObject){
    console.log("Errors handled: :" + errorObject.code);
-}
+});
