@@ -8,8 +8,8 @@ body {
 }
 
 .header-4{ 
-    margin-top: 90px;
-    margin-left: 20px;
+    margin-top: 3%;
+    margin-left: 2%;
     width: 200px;
     height: auto;
     content:url(images/heartveggies.png);
@@ -21,7 +21,7 @@ h1{
    position: relative;
    float: left;
    margin-left: 270px;
-   margin-top: 80px;
+   margin-top: 3%;
    text-align: center;
    font-family: sans-serif;
    font-weight: bold;
@@ -30,20 +30,20 @@ h1{
 }
 
  h2{
-     margin-left: 50px;
-     margin-top: -20px;
+     margin-left: 3%;
+     margin-top: -2%;
      position: relative;
      z-index: 2;
      margin-top: 5px;
     text-align: center;
     font-family: 'Satisfy', cursive;
-    font-size: 200px;
+    font-size: 190px;
     color: rgb(41, 13, 54);      
 }
 
 .images {
     padding:2px;
-    border: rgb(41, 13, 54) 2px solid;
+    border: whitesmoke 4px solid;
     padding: 5px;
     margin-left: 10px;
     margin-bottom: 10px;
@@ -52,10 +52,30 @@ h1{
 
 .row {
     clear: both;
-    margin-top: 90px;
-    font-family: 'impossible_-_0regular';
-    color: red;
-    font-size: 30px;
+    margin-top: 30px;
+    color: rgb(41, 13, 54);
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Satisfy', cursive;
+}
+
+#add-food { 
+    margin-left: 61%;
+    font-family:sans-serif;
+    color: whitesmoke;
+    background-color: rgb(41, 13, 54);
+    font-size: 20px;
+    
+    
+}
+
+#add-limit{
+    margin-left: 65%;
+    font-family: sans-serif;
+    color: whitesmoke;
+    background-color: rgb(41, 13, 54);
+    font-size: 20px;
+
 }
 
 #imageshere {
