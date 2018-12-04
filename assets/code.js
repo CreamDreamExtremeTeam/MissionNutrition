@@ -37,7 +37,7 @@ function main() {
             }
         })
 
-        searchFood(foodInput);
+        addFood(foodInput);
     })
 }
 
