@@ -38,7 +38,7 @@ function main() {
             $("#imageshere").append(foodDiv);
         })
 
-        searchFood(foodInput);
+        addFood(foodInput);
     })
 }
 
