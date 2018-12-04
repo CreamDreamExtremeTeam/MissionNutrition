@@ -12,33 +12,36 @@ function main() {
         $("#nutrition-input").val("");
         var key = "OhZvd5m3Bz8gbjnHIf8IBQOvBI9szvQy";
 
-      var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" + foodInput + "&api_key=" + key + "&limit=1";
+        var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" + foodInput + "&api_key=" + key + "&limit=1";
 
+        var block = $("<div>");
 
-      $.ajax({
-         url: queryURL,
-         method: "GET"
-      })
-         .then(function (response) {
-            console.log(response);
-            // $("#imageshere").empty();
-            var results = response.data;
-
-  
-               var foodDiv = $("<div>");
-               var foodImage = $("<img>");
-
-            foodImage.attr("src", results.images.fixed_height.url);
-            foodImage.attr("width", "250px");
-            foodImage.attr("height", "125px");
-            foodImage.addClass("images");
-
-            foodDiv.append(foodImage);
-
-            $("#imageshere").append(foodDiv);
+        $.ajax({
+            url: queryURL,
+            method: "GET"
         })
+            .then(function (response) {
+                console.log(response);
+                // $("#imageshere").empty();
+                var results = response.data;
 
-        addFood(foodInput);
+
+                var foodDiv = $("<div>");
+                var foodImage = $("<img>");
+
+                foodImage.attr("src", results.images.fixed_height.url);
+                foodImage.attr("width", "250px");
+                foodImage.attr("height", "125px");
+                foodImage.addClass("images");
+
+                foodDiv.append(foodImage);
+
+                block.append(foodDiv);
+            })
+
+        addFood(foodInput, block);
+
+        $("#blockHolder").append(block);
     })
 }
 
@@ -47,21 +50,20 @@ var headers = {
     "x-app-key": "072685781a81b5c18868bd69bbfa9fbb",
     "Content-Type": "application/json"
 }
-function addFood(foodName) {
-    console.log("Loading search: " + foodName);
+function addFood(foodName, divHolder) {
     $.ajax({
         url: "https://trackapi.nutritionix.com/v2/natural/nutrients",
         method: "POST",
         headers: headers,
         data: '{"query": "1 ' + foodName + '"}'
     }).then(function (res) {
-        console.log(res.foods[0]);
-        createNutritionLabel(res.foods[0]);
+        divHolder.append(createNutritionLabel(res.foods[0]));
     });
 }
 
 function createNutritionLabel(foodArr) {
-    $('#nutritionInfoGoesHere').nutritionLabel({
+    var div = $("<div>");
+    div.nutritionLabel({
         showItemName: false,
 
         showPolyFat: false,
@@ -87,4 +89,5 @@ function createNutritionLabel(foodArr) {
         valueProteins: foodArr.nf_protein,
         showLegacyVersion: false
     });
+    return div;
 }
