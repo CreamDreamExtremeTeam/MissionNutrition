@@ -29,8 +29,8 @@ function main() {
                var foodImage = $("<img>");
 
             foodImage.attr("src", results.images.fixed_height.url);
-            foodImage.attr("width", "300px");
-            foodImage.attr("height", "250px");
+            foodImage.attr("width", "250px");
+            foodImage.attr("height", "125px");
             foodImage.addClass("images");
 
             foodDiv.append(foodImage);
