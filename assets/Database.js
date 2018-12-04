@@ -24,9 +24,9 @@ $("#add-food").on("click", function (foodEvent) {
    // Grabbed values from text boxes
    nutrition = $('#nutrition-input').val().trim();
    console.log(nutrition);
-   calories = $('.nf_calories').val().trim();
+   calories = $('.nf_pr').val();
    console.log(calories);
-   count = $('.nf-unitQuantityBox').val().trim();
+   count = $('.nf-unitQuantityBox').val();
    console.log(count);
    // Code to handel the push
    database.ref().push({
