@@ -18,13 +18,16 @@ var calories = "";
 var count = "";
 
 // Capture Button Click for food
-$("add-food").on("click", function (foodEvent) {
+$("#add-food").on("click", function (foodEvent) {
    foodDvent.preventDefault();
 
    // Grabbed values from text boxes
-   nutrition = $('nutrition-input').val().trim();
-   calories = $('.nf-pr').val().trim();
-   count = $('.nf-unitQuantityBox').val().trim;
+   nutrition = $('#nutrition-input').val().trim();
+   console.log(nutrition);
+   calories = $('.nf_calories').val().trim();
+   console.log(calories);
+   count = $('.nf-unitQuantityBox').val().trim();
+   console.log(count);
    // Code to handel the push
    database.ref().push({
       nutrition: nutrition,
@@ -35,11 +38,11 @@ $("add-food").on("click", function (foodEvent) {
 });
 
 // Capture Button Click for desire
-$("add-limit").on("click", function (desireEvent) {
+$("#add-limit").on("click", function (desireEvent) {
    desireEvent.preventDefault();
    // Grabbed values from text boxes
 
-   limit = $("limit-input").val().trim();
+   limit = $("#limit-input").val().trim();
 
    database.ref().set({
       limit: limit
@@ -53,6 +56,11 @@ database.ref().on("child_added", function (snapshot) {
 
    // storing the snapshot.val() in a variable for convenience
    var sv = snapshot.val();
+
+   console.log(sv.nutrition);
+   console.log(sv.calories);
+   console.log(sv.count);
+   console.log(sv.limit);
 
    var nutritionElem = $("<h4>");
    var caloriesElem = $("<h4>");
