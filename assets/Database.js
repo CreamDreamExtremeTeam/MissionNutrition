@@ -9,7 +9,7 @@ var fbConfig = {
 firebase.initializeApp(fbConfig);
 
 //create variable to reference the database
-var database = firebase.databse();
+var database = firebase.database();
 
 //Initial Values
 var nutrition = "";
