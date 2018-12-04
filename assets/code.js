@@ -12,12 +12,15 @@
 $(document).ready(main);
 var foodArray = [];
 
+var foodArray = [];
+
 function main() {
    $("#add-food").on("click", function (event) {
       event.preventDefault();
 
       var foodInput = $("#nutrition-input").val().trim();
       foodArray.push(foodInput);
+      console.log(foodArray);
       $("#nutrition-input").val("");
       var key = "OhZvd5m3Bz8gbjnHIf8IBQOvBI9szvQy";
 
