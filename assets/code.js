@@ -24,7 +24,7 @@ function main() {
       $("#nutrition-input").val("");
       var key = "OhZvd5m3Bz8gbjnHIf8IBQOvBI9szvQy";
 
-      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + foodInput + "&api_key=" + key + "&limit=1";
+      var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" + foodInput + "&api_key=" + key + "&limit=1";
 
 
       $.ajax({
@@ -36,17 +36,19 @@ function main() {
 
             var results = response.data;
 
-            for (var i = 0; i < results.length; i++) {
+  
                var foodDiv = $("<div>");
                var foodImage = $("<img>");
 
-            foodImage.attr("src", results[i].images.fixed_height.url);
+            foodImage.attr("src", results.images.fixed_height.url);
+            foodImage.attr("width", "300px");
+            foodImage.attr("height", "250px");
             foodImage.addClass("images");
 
             foodDiv.append(foodImage);
 
             $("#imageshere").append(foodDiv);
-         }
+         
       })
 
       getInstant(foodInput);
