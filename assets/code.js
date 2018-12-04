@@ -11,13 +11,15 @@
 
 $(document).ready(main);
 
+var foodArray = [];
+
 function main() {
    $("#add-food").on("click", function (event) {
       event.preventDefault();
 
-      var foodArray = [];
       var foodInput = $("#nutrition-input").val().trim();
       foodArray.push(foodInput);
+      console.log(foodArray);
       $("#nutrition-input").val("");
       var key = "OhZvd5m3Bz8gbjnHIf8IBQOvBI9szvQy";
 
@@ -30,11 +32,10 @@ function main() {
       })
          .then(function (response) {
             console.log(response);
-            // $("#imageshere").empty();
+
             var results = response.data;
 
-
-            for (var i = 0; i < foodArray.length; i++) {
+            for (var i = 0; i < results.length; i++) {
                var foodDiv = $("<div>");
                var foodImage = $("<img>");
 
