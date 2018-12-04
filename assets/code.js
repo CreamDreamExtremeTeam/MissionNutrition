@@ -36,11 +36,10 @@ function main() {
             foodDiv.append(foodImage);
 
             $("#imageshere").append(foodDiv);
-         
-      })
+        })
 
-      getInstant(foodInput);
-   })
+        searchFood(foodInput);
+    })
 }
 
 var headers = {
@@ -48,16 +47,16 @@ var headers = {
     "x-app-key": "072685781a81b5c18868bd69bbfa9fbb",
     "Content-Type": "application/json"
 }
-function searchFood(search) {
-    console.log("Loading search: " + search);
+function addFood(foodName) {
+    console.log("Loading search: " + foodName);
     $.ajax({
         url: "https://trackapi.nutritionix.com/v2/natural/nutrients",
         method: "POST",
         headers: headers,
-        data: '{"query": "1 ' + search + '"}'
+        data: '{"query": "1 ' + foodName + '"}'
     }).then(function (res) {
         console.log(res.foods[0]);
-        processFood(res.foods[0]);
+        createNutritionLabel(res.foods[0]);
     });
 }
 
