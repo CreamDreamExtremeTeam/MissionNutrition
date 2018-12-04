@@ -80,7 +80,7 @@ function createNutritionLabel(foodArr) {
         //valueFatCalories: 220,
         valueTotalFat: foodArr.nf_total_fat,
         valueSatFat: foodArr.nf_saturated_fat,
-        valueCholesterol: foodWArr.nf_cholesterol,
+        valueCholesterol: foodArr.nf_cholesterol,
         valueSodium: foodArr.nf_sodium,
         valueTotalCarb: foodArr.nf_total_carbohydrate,
         valueSugars: foodArr.nf_sugars,
