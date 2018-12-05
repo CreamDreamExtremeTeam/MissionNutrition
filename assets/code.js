@@ -30,8 +30,8 @@ function addGiphy(foodName, divHolder)
         var foodImage = $("<img>");
 
         foodImage.attr("src", results.images.fixed_height.url);
-        foodImage.attr("width", "250px");
-        foodImage.attr("width", "250px");
+        foodImage.attr("width", "266px");
+        foodImage.attr("height", "133px");
         foodImage.addClass("images");
         foodImage.attr("data-name", foodName);
 
@@ -88,14 +88,30 @@ function createNutritionLabel(foodArr) {
     return div;
 }
 
-$(".images").on("click", function () {
+$(document).on("click", ".images", function(){
     var key = "OhZvd5m3Bz8gbjnHIf8IBQOvBI9szvQy";
-
-    var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" + this.attr("data-name") + "&api_key=" + key + "&limit=1";
+    console.log(this);
+   var oldURL = this;
+    var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" + $(this).attr("data-name")+ "&api_key=" + key + "&limit=1";
     $.ajax({
-        url: queryURL,
-        method: "GET"
-    })
-    this.attr("src", results.images.fixed_height.url);
+       url: queryURL,
+       method: "GET"
+   })
+   .then(function (response) {
+    var results = response.data;
+    console.log(response);
+  
+   $(oldURL).attr("src", results.images.fixed_height.url);
+   console.log(results.images.fixed_height.url);
+   console.log(this);
+  
+   })})
+
+$("#clear").click(function(event){
+    event.preventDefault();
+    database.ref().remove();
+    foodArray = [];
+    $("#blockHolder").empty();
+
 
 })
