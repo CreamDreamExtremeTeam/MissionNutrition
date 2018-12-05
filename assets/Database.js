@@ -1,4 +1,4 @@
-var database;
+// var database;
 
 $(document).ready(function () {
 
@@ -68,4 +68,6 @@ $(document).ready(function () {
 
         createFoodDiv(sv.food);
     });
+
+    
 });
