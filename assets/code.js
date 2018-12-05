@@ -101,14 +101,21 @@ function createNutritionLabel(foodArr) {
     });
 }
 
-$(".images").on("click", function () {
-    var key = "OhZvd5m3Bz8gbjnHIf8IBQOvBI9szvQy";
+$(document).on("click", ".images", function(){
+   var key = "OhZvd5m3Bz8gbjnHIf8IBQOvBI9szvQy";
+   console.log(this);
+  var oldURL = this;
+   var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" + $(this).attr("data-name")+ "&api_key=" + key + "&limit=1";
+   $.ajax({
+      url: queryURL,
+      method: "GET"
+  })
+  .then(function (response) {
+   var results = response.data;
+   console.log(response);
 
-    var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" + this.attr("data-name") + "&api_key=" + key + "&limit=1";
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    })
-    this.attr("src", results.images.fixed_height.url);
+  $(oldURL).attr("src", results.images.fixed_height.url);
+  console.log(results.images.fixed_height.url);
+  console.log(this);
 
-})
+  })})
