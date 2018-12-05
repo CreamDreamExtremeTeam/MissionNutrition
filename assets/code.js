@@ -116,16 +116,30 @@ $("#clear").click(function(event){
 
 })
 
-setTimeout(function(){
-    new Audio("assets/images/Audio/bgaudio.mp3").play();
-}, 60000);
+
+var tc = false;
+var audio;
 setTimeout(function() {
+    if (!tc)
+        return;
+    audio = new Audio("assets/images/Audio/bgaudio.mp3");
+    audio.play();
+}, 60000);
+
+setTimeout(function() {
+    if (!tc)
+        return;
 	var img = $("<img>");
     img.attr("src", "assets/images/MIC.gif");
     img.addClass("animated bounceInDown");
+    img.attr("style", "position:absolute;left:0;top:0;width:100%");
     $("body").append(img);
     img.addClass("tc");
-}, 66000)
+}, 66000);
+
 setTimeout(function(){
+    if (!tc)
+        return;
     $(".tc").addClass("zoomOutUp")
-}, 70000)
+    audio.pause();
+}, 70000);
