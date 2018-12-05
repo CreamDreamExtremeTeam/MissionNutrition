@@ -18,16 +18,16 @@ $(document).ready(function () {
 
     var limit = 2000;
 
-    // $("#add-food").on("click", function (event) {
-    //     event.preventDefault();
+    $("#add-food").on("click", function (event) {
+        event.preventDefault();
 
-    //     var foodInput = $("#nutrition-input").val().trim();
-    //     $("#nutrition-input").val("");
+        var foodInput = $("#nutrition-input").val().trim();
+        $("#nutrition-input").val("");
 
-        // database.ref().push({
-        //     food: foodInput
-        // });
-    // });
+        database.ref().push({
+            food: foodInput
+        });
+    });
 
     $("#add-limit").on("click", function (event) {
         event.preventDefault();
