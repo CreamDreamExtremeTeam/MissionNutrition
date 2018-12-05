@@ -121,23 +121,15 @@ label {
 #blockHolder > div {
     display: inline-block;
     padding:5px;
-  }
+}
 
-  #clear {
+#clear {
     font-family:sans-serif;
     color: whitesmoke;
     background-color: rgb(41, 13, 54);
-    font-size: 20px;   
-    
-  }
+    font-size: 20px;
+}
 
-  .nf {
-      background-color: whitesmoke;
-  }
-
-  .tc {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-  }
+.nf {
+    background-color: whitesmoke;
+}
