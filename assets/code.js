@@ -6,6 +6,7 @@ window.createFoodDiv = function (foodName) {
 
     foodArray.push(foodName);
     var block = $("<div>");
+    block.addClass("animated bounceIn")
 
     addGiphy(foodName, block);
     addFood(foodName, block);
@@ -41,8 +42,8 @@ function addGiphy(foodName, divHolder) {
 
 function addFood(foodName, divHolder) {
     var headers = {
-        "x-app-id": "42a27a85",
-        "x-app-key": "0fd16449067c00aa749875f5822d811a",
+        "x-app-id": "25536362",
+        "x-app-key": "81b40dac13dd0ea7dd8edd2b331d92f1",
         "Content-Type": "application/json"
     }
 

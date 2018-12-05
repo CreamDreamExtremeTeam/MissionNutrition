@@ -136,10 +136,10 @@ label {
 
 footer {
     text-align: center;
-    background: linear-gradient(to bottom, #569238 0%, #BCE1AB 45%, #BCE1AB 55%, #569238 100%);  ;
+    background: linear-gradient(to bottom, #BCE1AB 15%, #569238 45%, #569238 15%, #BCE1AB 100%);  ;
     position: fixed;
     bottom: 0;
     width: 100%;
-    font-family: 'Satisfy', cursive;
-    font-size: 21px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
 }
