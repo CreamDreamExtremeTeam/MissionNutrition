@@ -1,10 +1,29 @@
+html {
+    height: 100%;
+}
 body { 
-   background: url(images/background.jpg) no-repeat center center fixed; 
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #569238),
+        color-stop(0.45, #BCE1AB),
+        color-stop(0.55, #BCE1AB),
+        color-stop(1, #569238)
+    ) ;
+    background-image: -o-linear-gradient(bottom, #569238 0%, #BCE1AB 45%, #BCE1AB 55%, #569238 100%);
+    background-image: -moz-linear-gradient(bottom, #569238 0%, #BCE1AB 45%, #BCE1AB 55%, #569238 100%);
+    background-image: -webkit-linear-gradient(bottom, #569238 0%, #BCE1AB 45%, #BCE1AB 55%, #569238 100%);
+    background-image: -ms-linear-gradient(bottom, #569238 0%, #BCE1AB 45%, #BCE1AB 55%, #569238 100%);
+    background-image: linear-gradient(to bottom, #569238 0%, #BCE1AB 45%, #BCE1AB 55%, #569238 100%);  
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-    
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
 }
 
 .header-4{ 
@@ -98,3 +117,8 @@ label {
     margin-top: 50px;
     
 }
+
+#blockHolder > div {
+    display: inline-block;
+    padding:5px;
+  }
