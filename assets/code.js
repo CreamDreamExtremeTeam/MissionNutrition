@@ -16,8 +16,8 @@ window.createFoodDiv = function (foodName) {
     addGiphy(foodName, block);
     addFood(foodName, block);
     $("#blockHolder").append(block);
-
-    calculateAndDisplayNutritionValues();
+    
+    this.setTimeout(calculateAndDisplayNutritionValues, 1000);
 }
 
 function calculateAndDisplayNutritionValues() {
