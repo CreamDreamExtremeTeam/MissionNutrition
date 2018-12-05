@@ -118,8 +118,7 @@ $("#clear").click(function (event) {
 
 var tc = false;
 var audio;
-if (!tc)
-{
+if (tc) {
     setTimeout(function () {
         audio = new Audio("assets/images/Audio/bgaudio.mp3");
         audio.play();
