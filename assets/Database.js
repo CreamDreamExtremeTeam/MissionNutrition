@@ -22,6 +22,7 @@ $(document).ready(function () {
         event.preventDefault();
 
         var foodInput = $("#nutrition-input").val().trim();
+        $("#nutrition-input").val("");
 
         database.ref().push({
             food: foodInput
@@ -47,12 +48,12 @@ $(document).ready(function () {
         // this function should only run when reading the limit
         var sv = snapshot.val();
 
-        console.log("Read database limit", sv.limit);
         if (sv.limit === undefined) {
             // there's no limit defined
             limit = 2000;
         }
         else {
+            console.log("Read database limit", sv.limit);
             limit = parseInt(sv.limit);
         }
     });
@@ -62,9 +63,8 @@ $(document).ready(function () {
 
         // storing the snapshot.val() in a variable for convenience
         var sv = snapshot.val();
-        console.log(sv);
 
-        console.log("Read database food \"" + sv.food + "\"");
+        //console.log("Read database food", sv.food);
 
         createFoodDiv(sv.food);
     });

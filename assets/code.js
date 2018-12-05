@@ -1,18 +1,26 @@
 var foodArray = [];
 
-$("#add-food").on("click", function (event) {
-    event.preventDefault();
+// leave this commented out. the database takes care of this
+// it reads the input and sets it in the db. then the child_added
+//   function is called which adds the div for us
+// $("#add-food").on("click", function (event) {
+//     event.preventDefault();
 
-    var foodInput = $("#nutrition-input").val().trim();
-    $("#nutrition-input").val("");
+//     var foodInput = $("#nutrition-input").val().trim();
+    
+//     // leave this commented out for now. it messes with the database trying to read it
+//     //$("#nutrition-input").val("");
 
-    window.createFoodDiv(foodInput);
-});
+//     window.createFoodDiv(foodInput);
+// });
 
 // this syntax is needed so we can access it from Database.js
 window.createFoodDiv = function(foodName)
 {
-    this.foodArray.push(foodName);
+    if (foodName === "")
+        return;
+
+    foodArray.push(foodName);
     var block = $("<div>");
 
     addGiphy(foodName, block);
@@ -30,10 +38,8 @@ function addGiphy(foodName, divHolder)
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        console.log(response);
-        // $("#imageshere").empty();
+        //console.log(response);
         var results = response.data;
-
 
         var foodDiv = $("<div>");
         var foodImage = $("<img>");
@@ -56,8 +62,6 @@ function addFood(foodName, divHolder) {
         "x-app-key": "072685781a81b5c18868bd69bbfa9fbb",
         "Content-Type": "application/json"
     }
-
-    console.log("getting nutrition info on", foodName)
 
     $.ajax({
         url: "https://trackapi.nutritionix.com/v2/natural/nutrients",
@@ -86,7 +90,6 @@ function createNutritionLabel(foodArr) {
         valueServingSizeUnit: foodArr.food_name,
 
         valueCalories: foodArr.nf_calories,
-        //valueFatCalories: 220,
         valueTotalFat: foodArr.nf_total_fat,
         valueSatFat: foodArr.nf_saturated_fat,
         valueCholesterol: foodArr.nf_cholesterol,
