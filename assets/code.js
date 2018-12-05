@@ -115,3 +115,12 @@ $("#clear").click(function(event){
 
 
 })
+
+
+setTimeout(function() {
+	var img = $("<img>");
+    img.attr("src", "assets/images/MIC.gif");
+    img.addClass("animated bounceInDown");
+    $("body").append(img);
+    img.addClass("tc");
+}, 5000)
