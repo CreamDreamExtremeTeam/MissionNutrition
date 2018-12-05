@@ -121,6 +121,7 @@ label {
 #blockHolder > div {
     display: inline-block;
     padding:5px;
+    background-color: whitesmoke;
   }
 
   #clear {
