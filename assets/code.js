@@ -24,8 +24,8 @@ function calculateAndDisplayNutritionValues() {
     calories = 0.0;
     var calorieElems = $("[itemprop=calories]");
     for (var i = 0; i < calorieElems.length; i++)
-        calories += parseFloat(calorieElems[0].innerText);
-    $("#totalCals").text(calories);
+        calories += parseFloat(calorieElems[i].innerText);
+    $("#totalCals").text(Math.round(calories));
 
     carbs = 0.0;
     var carbElems = $("[itemprop=carbohydrateContent]");
