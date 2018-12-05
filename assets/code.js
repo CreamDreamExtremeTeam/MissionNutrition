@@ -20,26 +20,25 @@ window.createFoodDiv = function (foodName) {
     calculateAndDisplayNutritionValues();
 }
 
-function calculateAndDisplayNutritionValues()
-{
+function calculateAndDisplayNutritionValues() {
     calories = 0.0;
     var calorieElems = $("[itemprop=calories]");
     for (var i = 0; i < calorieElems.length; i++)
         calories += parseFloat(calorieElems[0].innerText);
     $("#totalCals").text(Math.round(calories));
-    
+
     carbs = 0.0;
     var carbElems = $("[itemprop=carbohydrateContent]");
     for (var i = 0; i < carbElems.length; i++)
         carbs += parseFloat(carbElems[i].innerText);
     $("#totalCarbs").text(Math.round(carbs));
-    
+
     sodium = 0.0;
     var sodiumElems = $("[itemprop=cholesterolContent]");
     for (var i = 0; i < sodiumElems.length; i += 2)
         sodium += parseFloat(sodiumElems[i].innerText);
     $("#totalSod").text(Math.round(sodium));
-    
+
     protein = 0.0;
     var proteinElems = $("[itemprop=cholesterolContent]");
     for (var i = 1; i < proteinElems.length; i += 2)
