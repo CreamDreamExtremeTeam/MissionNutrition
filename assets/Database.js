@@ -21,11 +21,10 @@ $(document).ready(function () {
     $("#add-food").on("click", function (event) {
         event.preventDefault();
 
-        var food = $("#nutrition-input").val().trim();
-        console.log(food);
+        var foodInput = $("#nutrition-input").val().trim();
 
         database.ref().push({
-            food: food
+            food: foodInput
         });
     });
 
@@ -65,7 +64,7 @@ $(document).ready(function () {
         var sv = snapshot.val();
         console.log(sv);
 
-        console.log("Read database food", sv.food);
+        console.log("Read database food \"" + sv.food + "\"");
 
         createFoodDiv(sv.food);
     });

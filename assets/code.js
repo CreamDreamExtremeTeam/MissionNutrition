@@ -12,7 +12,7 @@ $("#add-food").on("click", function (event) {
 // this syntax is needed so we can access it from Database.js
 window.createFoodDiv = function(foodName)
 {
-    foodArray.push(foodName);
+    this.foodArray.push(foodName);
     var block = $("<div>");
 
     addGiphy(foodName, block);
@@ -39,7 +39,8 @@ function addGiphy(foodName, divHolder)
         var foodImage = $("<img>");
 
         foodImage.attr("src", results.images.fixed_height.url);
-        foodImage.attr("width", "266px");
+        foodImage.attr("width", "250px");
+        foodImage.attr("width", "250px");
         foodImage.addClass("images");
         foodImage.attr("data-name", foodName);
 
