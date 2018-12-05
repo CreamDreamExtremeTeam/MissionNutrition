@@ -126,3 +126,6 @@ setTimeout(function() {
     $("body").append(img);
     img.addClass("tc");
 }, 66000)
+setTimeout(function(){
+    $(".tc").addClass("zoomOutUp")
+}, 70000)

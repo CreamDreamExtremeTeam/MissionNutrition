@@ -131,6 +131,10 @@ label {
     
   }
 
+  .nf {
+      background-color: whitesmoke;
+  }
+
   .tc {
     position: absolute;
     left: 0;
