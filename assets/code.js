@@ -1,7 +1,6 @@
 var foodArray = [];
 
-window.createFoodDiv = function(foodName)
-{
+window.createFoodDiv = function (foodName) {
     if (foodName === "")
         return;
 
@@ -14,8 +13,7 @@ window.createFoodDiv = function(foodName)
     $("#blockHolder").append(block);
 }
 
-function addGiphy(foodName, divHolder)
-{
+function addGiphy(foodName, divHolder) {
     var key = "OhZvd5m3Bz8gbjnHIf8IBQOvBI9szvQy";
     var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" + foodName + "&api_key=" + key + "&limit=1";
 
@@ -88,26 +86,27 @@ function createNutritionLabel(foodArr) {
     return div;
 }
 
-$(document).on("click", ".images", function(){
+$(document).on("click", ".images", function () {
     var key = "OhZvd5m3Bz8gbjnHIf8IBQOvBI9szvQy";
     console.log(this);
-   var oldURL = this;
-    var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" + $(this).attr("data-name")+ "&api_key=" + key + "&limit=1";
+    var oldURL = this;
+    var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" + $(this).attr("data-name") + "&api_key=" + key + "&limit=1";
     $.ajax({
-       url: queryURL,
-       method: "GET"
-   })
-   .then(function (response) {
-    var results = response.data;
-    console.log(response);
-  
-   $(oldURL).attr("src", results.images.fixed_height.url);
-   console.log(results.images.fixed_height.url);
-   console.log(this);
-  
-   })})
+        url: queryURL,
+        method: "GET"
+    })
+        .then(function (response) {
+            var results = response.data;
+            console.log(response);
 
-$("#clear").click(function(event){
+            $(oldURL).attr("src", results.images.fixed_height.url);
+            console.log(results.images.fixed_height.url);
+            console.log(this);
+
+        })
+})
+
+$("#clear").click(function (event) {
     event.preventDefault();
     database.ref().remove();
     foodArray = [];
@@ -119,27 +118,24 @@ $("#clear").click(function(event){
 
 var tc = false;
 var audio;
-setTimeout(function() {
-    if (!tc)
-        return;
-    audio = new Audio("assets/images/Audio/bgaudio.mp3");
-    audio.play();
-}, 60000);
+if (!tc)
+{
+    setTimeout(function () {
+        audio = new Audio("assets/images/Audio/bgaudio.mp3");
+        audio.play();
+    }, 60000);
 
-setTimeout(function() {
-    if (!tc)
-        return;
-	var img = $("<img>");
-    img.attr("src", "assets/images/MIC.gif");
-    img.addClass("animated bounceInDown");
-    img.attr("style", "position:absolute;left:0;top:0;width:100%");
-    $("body").append(img);
-    img.addClass("tc");
-}, 66000);
+    setTimeout(function () {
+        var img = $("<img>");
+        img.attr("src", "assets/images/MIC.gif");
+        img.addClass("animated bounceInDown");
+        img.attr("style", "position:absolute;left:0;top:0;width:100%");
+        $("body").append(img);
+        img.addClass("tc");
+    }, 66000);
 
-setTimeout(function(){
-    if (!tc)
-        return;
-    $(".tc").addClass("zoomOutUp")
-    audio.pause();
-}, 70000);
+    setTimeout(function () {
+        $(".tc").addClass("zoomOutUp")
+        audio.pause();
+    }, 70000);
+}
