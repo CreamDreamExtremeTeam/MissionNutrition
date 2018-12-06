@@ -24,11 +24,8 @@ function calculateAndDisplayNutritionValues() {
     var calorieElems = $("[itemprop=calories]");
     for (var i = 0; i < calorieElems.length; i++)
         calories += parseFloat(calorieElems[i].innerText);
-<<<<<<< Updated upstream
     $("#totalCals").text(Math.round(calories));
-=======
     $("#totalCals").text(calories);
->>>>>>> Stashed changes
 
     carbs = 0.0;
     var carbElems = $("[itemprop=carbohydrateContent]");
@@ -150,7 +147,7 @@ $("#clear").click(function (event) {
     database.ref().remove();
     foodArray = [];
     $("#blockHolder").empty();
-    this.setTimeout(calculateAndDisplayNutritionValues, 3000);
+    setTimeout(calculateAndDisplayNutritionValues, 3000);
 });
 
 
