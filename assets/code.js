@@ -78,8 +78,8 @@ $(document).ajaxError(function() {
 
 function addFood(foodName, divHolder) {
     var headers = {
-        "x-app-id": "810ec152",
-        "x-app-key": "072685781a81b5c18868bd69bbfa9fbb",
+        "x-app-id": "42a27a85",
+        "x-app-key": "0fd16449067c00aa749875f5822d811a",
         "Content-Type": "application/json"
     }
 
