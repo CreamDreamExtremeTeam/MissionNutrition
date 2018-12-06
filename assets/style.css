@@ -218,6 +218,7 @@ footer {
     .nf {
         width: 210px!important;
     }
+}
     
     @media only screen and (max-width: 549px){
         .header-4{
@@ -248,7 +249,7 @@ footer {
         }
     
         .block{
-            width: 220px;
+            width: 207px;
             margin: 10px!important;
         }
         
@@ -261,4 +262,32 @@ footer {
         }
         
     } 
+
+    @media only screen and (max-width: 457px){
+        .header-4{
+            margin-left: 2%;
+            margin-top: 6%;
+            width: 109px;
+        }
+        h2 {font-size: 84px;
+            padding-left: 23%;
+            
+        }
+        h1 {font-size:23px;
+            padding-left: 35%;
+            padding-top: 2%;
+        }
+        #nutrition-input {
+            font-size: 13px;
+        }
+        #limit-input {
+            font-size: 15px;
+        }
+        #add-food {
+            margin-left: 15%;
+        }
+        #add-limit {
+            margin-left: 54%;
+        }
+
 }
