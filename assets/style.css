@@ -152,6 +152,10 @@ footer {
     color: red;
 }
 
+.hotdog {
+    padding: 80px;
+}
+
 @media only screen and (max-width: 1199px){
     h2 {padding-left: 18%;
         padding-top: 4%;
@@ -161,6 +165,9 @@ footer {
     }
     #add-limit {
         margin-left: 50%;
+    }
+    .hotdog {
+        padding: 55px;
     }
 }
 
@@ -177,6 +184,9 @@ footer {
     }
     #add-limit {
         margin-left: 68%;
+    }
+    .hotdog {
+        padding: 20px;
     }
 
 }
@@ -217,6 +227,10 @@ footer {
     }
     .nf {
         width: 210px!important;
+    }
+    .hotdog {
+        padding: 12px;
+        font-size: 16px;
     }
 }
     
@@ -259,6 +273,10 @@ footer {
         }
         .nf {
             width: 210px!important;
+        }
+        .hotdog{
+            padding: 3px;
+            font-size: 13px;
         }
         
     } 
