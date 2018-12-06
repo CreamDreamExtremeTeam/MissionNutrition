@@ -148,6 +148,9 @@ footer {
     vertical-align: center;
 } 
 
+.red-text {
+    color: red;
+}
 
 @media only screen and (max-width: 1199px){
     h2 {padding-left: 18%;
@@ -160,3 +163,15 @@ footer {
         margin-left: 50%;
     }
 }
+
+@media only screen and (max-width: 991px){
+    h2 {font-size:150px;
+        padding-left: 28%;
+        
+    }
+    h1 {font-size:42px;
+        padding-left: 36%;
+    }
+
+}
+
