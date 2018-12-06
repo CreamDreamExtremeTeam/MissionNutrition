@@ -38,7 +38,7 @@ function calculateAndDisplayNutritionValues() {
 
     protein = 0.0;
     var proteinElems = $("[itemprop=proteinContent]");
-    for (var i = 0; i < proteinElems.length; i++)
+    for (var i = 0; i < proteinElems.length; i ++)
         protein += parseFloat(proteinElems[i].innerText);
     $("#totalPro").text(Math.round(protein));
 
