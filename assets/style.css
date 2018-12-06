@@ -185,7 +185,7 @@ footer {
     .header-4{
         margin-left: -6%;
         margin-top: 4%;
-        width: 177;
+        width: 177px;
     }
     h2 {font-size: 117px;
         padding-left: 23%;
@@ -205,8 +205,89 @@ footer {
     #limit-input {
         font-size: 22px;
     }
-    
-    
-    
-    }
 
+    .block{
+        width: 220px;
+        margin: 10px!important;
+    }
+    
+    img {
+        width: 200px;
+        
+    }
+    .nf {
+        width: 210px!important;
+    }
+}
+    
+    @media only screen and (max-width: 549px){
+        .header-4{
+            margin-left: 2%;
+            margin-top: 6%;
+            width: 133px;
+        }
+        h2 {font-size: 100px;
+            padding-left: 23%;
+            
+        }
+        h1 {font-size:31px;
+            padding-left: 35%;
+            padding-top: 2%;
+        }
+        #add-food {
+            margin-left: 23%;
+        }
+        #add-limit {
+            margin-left: 54%;
+        }
+
+        #nutrition-input {
+            font-size: 16px;
+        }
+        #limit-input {
+            font-size: 18px;
+        }
+    
+        .block{
+            width: 207px;
+            margin: 10px!important;
+        }
+        
+        img {
+            width: 200px;
+            
+        }
+        .nf {
+            width: 210px!important;
+        }
+        
+    } 
+
+    @media only screen and (max-width: 457px){
+        .header-4{
+            margin-left: 2%;
+            margin-top: 6%;
+            width: 109px;
+        }
+        h2 {font-size: 84px;
+            padding-left: 23%;
+            
+        }
+        h1 {font-size:23px;
+            padding-left: 35%;
+            padding-top: 2%;
+        }
+        #nutrition-input {
+            font-size: 13px;
+        }
+        #limit-input {
+            font-size: 15px;
+        }
+        #add-food {
+            margin-left: 15%;
+        }
+        #add-limit {
+            margin-left: 54%;
+        }
+
+}
