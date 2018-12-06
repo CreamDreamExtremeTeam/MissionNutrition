@@ -181,19 +181,32 @@ footer {
 
 }
 
-/* @media only screen and (max-width: 767px){
-    h2 {font-size:100px;
-        padding-left: 28%;
+@media only screen and (max-width: 767px){
+    .header-4{
+        margin-left: -6%;
+        margin-top: 4%;
+        width: 177;
+    }
+    h2 {font-size: 117px;
+        padding-left: 23%;
         
     }
-    h1 {font-size:42px;
-        padding-left: 36%;
+    h1 {font-size:37px;
+        padding-left: 32%;
+        padding-top: 2%;
     }
     #add-food {
-        margin-left: 39%;
+        margin-left: 38%;
     }
-    #add-limit {
-        margin-left: 50%;
+    
+    #nutrition-input {
+        font-size: 20px;
     }
-} */
+    #limit-input {
+        font-size: 22px;
+    }
+    
+    
+    
+    }
 

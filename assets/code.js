@@ -10,6 +10,7 @@ window.createFoodDiv = function(foodName) {
 
     foodArray.push(foodName);
     var block = $("<div>");
+    block.addClass("block");
     block.addClass("animated bounceIn")
     $("#blockHolder").prepend(block);
 
