@@ -25,7 +25,6 @@ function calculateAndDisplayNutritionValues() {
     for (var i = 0; i < calorieElems.length; i++)
         calories += parseFloat(calorieElems[i].innerText);
     $("#totalCals").text(Math.round(calories));
-    $("#totalCals").text(calories);
 
     carbs = 0.0;
     var carbElems = $("[itemprop=carbohydrateContent]");
@@ -76,8 +75,8 @@ $(document).ajaxError(function() {
 
 function addFood(foodName, divHolder) {
     var headers = {
-        "x-app-id": "25536362",
-        "x-app-key": "81b40dac13dd0ea7dd8edd2b331d92f1",
+        "x-app-id": "810ec152",
+        "x-app-key": "072685781a81b5c18868bd69bbfa9fbb",
         "Content-Type": "application/json"
     }
 
