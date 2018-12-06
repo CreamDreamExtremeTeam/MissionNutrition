@@ -2,7 +2,6 @@ var foodArray = [];
 
 var calories = 0.0;
 var carbs = 0.0;
-var sodium = 0.0;
 var protein = 0.0;
 
 window.createFoodDiv = function(foodName) {
