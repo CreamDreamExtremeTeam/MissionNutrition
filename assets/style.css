@@ -205,6 +205,19 @@ footer {
     #limit-input {
         font-size: 22px;
     }
+
+    .block{
+        width: 220px;
+        margin: 10px!important;
+    }
+    
+    img {
+        width: 200px;
+        
+    }
+    .nf {
+        width: 210px!important;
+    }
     
     
     

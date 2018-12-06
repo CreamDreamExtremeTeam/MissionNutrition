@@ -10,6 +10,7 @@ window.createFoodDiv = function(foodName) {
 
     foodArray.push(foodName);
     var block = $("<div>");
+    block.addClass("block");
     block.addClass("animated bounceIn")
     $("#blockHolder").prepend(block);
 
@@ -72,7 +73,7 @@ function addGiphy(foodName, divHolder) {
 $(document).ajaxError(function() {
     setTimeout(function() {
         $("#blockHolder > div")[0].remove();
-    }, 3000);
+    }, 500);
 });
 
 function addFood(foodName, divHolder) {
