@@ -39,6 +39,8 @@ function calculateAndDisplayNutritionValues() {
     $("#totalPro").text(Math.round(protein));
 
     $("#goalCal").text(limit);
+    if (calories >= limit)
+        $("footer").addClass("red-text");
 }
 
 function addGiphy(foodName, divHolder) {
