@@ -34,12 +34,12 @@ $("#add-limit").on("click", function (event) {
 
     limit = val;
 
-    database.ref().set({
+    database.ref("limit").set({
         limit: limit
     });
 });
 
-database.ref().on("value", function (snapshot) {
+database.ref("limit").on("value", function (snapshot) {
     // this function should only run when reading the limit
     var sv = snapshot.val();
 
