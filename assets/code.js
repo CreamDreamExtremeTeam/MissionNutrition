@@ -24,8 +24,12 @@ function calculateAndDisplayNutritionValues() {
     calories = 0.0;
     var calorieElems = $("[itemprop=calories]");
     for (var i = 0; i < calorieElems.length; i++)
-        calories += parseFloat(calorieElems[0].innerText);
+        calories += parseFloat(calorieElems[i].innerText);
+<<<<<<< Updated upstream
+    $("#totalCals").text(Math.round(calories));
+=======
     $("#totalCals").text(calories);
+>>>>>>> Stashed changes
 
     carbs = 0.0;
     var carbElems = $("[itemprop=carbohydrateContent]");
@@ -86,6 +90,7 @@ function addFood(foodName, divHolder) {
         data: '{"query": "1 ' + foodName + '"}'
     }).then(function (res) {
         divHolder.append(createNutritionLabel(res.foods[0]));
+        
     });
 }
 
@@ -144,8 +149,7 @@ $("#clear").click(function (event) {
     database.ref().remove();
     foodArray = [];
     $("#blockHolder").empty();
-    calculateAndDisplayNutritionValues();
-
+    this.setTimeout(calculateAndDisplayNutritionValues, 3000);
 });
 
 
