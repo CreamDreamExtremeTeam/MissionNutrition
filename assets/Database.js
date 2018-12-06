@@ -50,6 +50,7 @@ database.ref("limit").on("value", function (snapshot) {
     else {
         console.log("Read database limit", sv.limit);
         limit = parseInt(sv.limit);
+        calculateAndDisplayNutritionValues();
     }
 });
 
