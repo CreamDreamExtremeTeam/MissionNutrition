@@ -145,7 +145,7 @@ $("#clear").click(function (event) {
     database.ref().remove();
     foodArray = [];
     $("#blockHolder").empty();
-    this.setTimeout(calculateAndDisplayNutritionValues, 3000);
+    setTimeout(calculateAndDisplayNutritionValues, 3000);
 });
 
 
