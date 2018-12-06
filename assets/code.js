@@ -11,10 +11,10 @@ window.createFoodDiv = function(foodName) {
     foodArray.push(foodName);
     var block = $("<div>");
     block.addClass("animated bounceIn")
+    $("#blockHolder").prepend(block);
 
     addGiphy(foodName, block);
     addFood(foodName, block);
-    $("#blockHolder").prepend(block);
     
     this.setTimeout(calculateAndDisplayNutritionValues, 3000);
 }
@@ -66,6 +66,12 @@ function addGiphy(foodName, divHolder) {
         divHolder.prepend(foodDiv);
     });
 }
+
+$(document).ajaxError(function() {
+    setTimeout(function() {
+        $("#blockHolder > div")[0].remove();
+    }, 3000);
+});
 
 function addFood(foodName, divHolder) {
     var headers = {
