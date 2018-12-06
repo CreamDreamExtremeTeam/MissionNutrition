@@ -148,8 +148,15 @@ footer {
     vertical-align: center;
 } 
 
+
 @media only screen and (max-width: 1199px){
     h2 {padding-left: 18%;
         padding-top: 4%;
+    }
+    #add-food {
+        margin-left: 39%;
+    }
+    #add-limit {
+        margin-left: 50%;
     }
 }
