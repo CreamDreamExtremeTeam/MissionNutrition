@@ -72,7 +72,7 @@ function addGiphy(foodName, divHolder) {
 $(document).ajaxError(function() {
     setTimeout(function() {
         $("#blockHolder > div")[0].remove();
-    }, 3000);
+    }, 500);
 });
 
 function addFood(foodName, divHolder) {
