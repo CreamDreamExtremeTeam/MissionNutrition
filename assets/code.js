@@ -2,20 +2,19 @@ var foodArray = [];
 
 var calories = 0.0;
 var carbs = 0.0;
-var sodium = 0.0;
 var protein = 0.0;
 
-window.createFoodDiv = function (foodName) {
+window.createFoodDiv = function(foodName) {
     if (foodName === "")
         return;
 
     foodArray.push(foodName);
     var block = $("<div>");
     block.addClass("animated bounceIn")
+    $("#blockHolder").prepend(block);
 
     addGiphy(foodName, block);
     addFood(foodName, block);
-    $("#blockHolder").append(block);
     
     this.setTimeout(calculateAndDisplayNutritionValues, 3000);
 }
@@ -25,25 +24,25 @@ function calculateAndDisplayNutritionValues() {
     var calorieElems = $("[itemprop=calories]");
     for (var i = 0; i < calorieElems.length; i++)
         calories += parseFloat(calorieElems[i].innerText);
+<<<<<<< Updated upstream
     $("#totalCals").text(Math.round(calories));
+=======
+    $("#totalCals").text(calories);
+>>>>>>> Stashed changes
 
     carbs = 0.0;
     var carbElems = $("[itemprop=carbohydrateContent]");
     for (var i = 0; i < carbElems.length; i++)
         carbs += parseFloat(carbElems[i].innerText);
-    $("#totalCarbs").text(carbs);
-
-    sodium = 0.0;
-    var sodiumElems = $("[itemprop=cholesterolContent]");
-    for (var i = 0; i < sodiumElems.length; i ++)
-        sodium += parseFloat(sodiumElems[i].innerText);
-    $("#totalSod").text(Math.round(sodium));
+    $("#totalCarbs").text(Math.round(carbs));
 
     protein = 0.0;
     var proteinElems = $("[itemprop=proteinContent]");
     for (var i = 0; i < proteinElems.length; i ++)
         protein += parseFloat(proteinElems[i].innerText);
     $("#totalPro").text(Math.round(protein));
+
+    $("#goalCal").text(limit);
 }
 
 function addGiphy(foodName, divHolder) {
@@ -72,6 +71,12 @@ function addGiphy(foodName, divHolder) {
     });
 }
 
+$(document).ajaxError(function() {
+    setTimeout(function() {
+        $("#blockHolder > div")[0].remove();
+    }, 3000);
+});
+
 function addFood(foodName, divHolder) {
     var headers = {
         "x-app-id": "25536362",
@@ -86,6 +91,7 @@ function addFood(foodName, divHolder) {
         data: '{"query": "1 ' + foodName + '"}'
     }).then(function (res) {
         divHolder.append(createNutritionLabel(res.foods[0]));
+        
     });
 }
 
