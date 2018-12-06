@@ -5,7 +5,7 @@ var carbs = 0.0;
 var sodium = 0.0;
 var protein = 0.0;
 
-window.createFoodDiv = function (foodName) {
+window.createFoodDiv = function(foodName) {
     if (foodName === "")
         return;
 
@@ -15,7 +15,7 @@ window.createFoodDiv = function (foodName) {
 
     addGiphy(foodName, block);
     addFood(foodName, block);
-    $("#blockHolder").append(block);
+    $("#blockHolder").prepend(block);
     
     this.setTimeout(calculateAndDisplayNutritionValues, 3000);
 }
@@ -31,19 +31,15 @@ function calculateAndDisplayNutritionValues() {
     var carbElems = $("[itemprop=carbohydrateContent]");
     for (var i = 0; i < carbElems.length; i++)
         carbs += parseFloat(carbElems[i].innerText);
-    $("#totalCarbs").text(carbs);
-
-    sodium = 0.0;
-    var sodiumElems = $("[itemprop=cholesterolContent]");
-    for (var i = 0; i < sodiumElems.length; i ++)
-        sodium += parseFloat(sodiumElems[i].innerText);
-    $("#totalSod").text(Math.round(sodium));
+    $("#totalCarbs").text(Math.round(carbs));
 
     protein = 0.0;
     var proteinElems = $("[itemprop=proteinContent]");
     for (var i = 0; i < proteinElems.length; i ++)
         protein += parseFloat(proteinElems[i].innerText);
     $("#totalPro").text(Math.round(protein));
+
+    $("#goalCal").text(limit);
 }
 
 function addGiphy(foodName, divHolder) {
