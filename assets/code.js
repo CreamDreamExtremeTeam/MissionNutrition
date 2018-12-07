@@ -42,6 +42,8 @@ function calculateAndDisplayNutritionValues() {
     $("#goalCal").text(limit);
     if (calories >= limit)
         $("footer").addClass("red-text");
+    else
+        $("footer").removeClass("red-text");
 }
 
 function addGiphy(foodName, divHolder) {
