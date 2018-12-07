@@ -50,48 +50,44 @@ function addGiphy(foodName, divHolder) {
     var key = "OhZvd5m3Bz8gbjnHIf8IBQOvBI9szvQy";
     var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" + foodName + "&api_key=" + key + "&limit=1";
 
+    var foodImage = $("<img>");
+    foodImage.attr("src", "assets/images/oreo-bailonga.gif");
+    foodImage.attr("width", "266px");
+    foodImage.attr("height", "133px");
+    foodImage.addClass("images");
+
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        var results = response.data;
-
         var foodDiv = $("<div>");
-        var foodImage = $("<img>");
 
-        foodImage.attr("src", results.images.fixed_height.url);
-        foodImage.attr("width", "266px");
-        foodImage.attr("height", "133px");
-        foodImage.addClass("images");
+        foodImage.attr("src", response.data.images.fixed_height.url);
         foodImage.attr("data-name", foodName);
 
         foodDiv.append(foodImage);
-
         divHolder.prepend(foodDiv);
     });
 }
-
-$(document).ajaxError(function () {
-    setTimeout(function () {
-        $("#blockHolder > div")[0].remove();
-    }, 500);
-});
 
 function addFood(foodName, divHolder) {
     var headers = {
         "x-app-id": "42a27a85",
         "x-app-key": "0fd16449067c00aa749875f5822d811a",
         "Content-Type": "application/json"
-    }
+    };
 
     $.ajax({
         url: "https://trackapi.nutritionix.com/v2/natural/nutrients",
         method: "POST",
         headers: headers,
-        data: '{"query": "1 ' + foodName + '"}'
-    }).then(function (res) {
-        divHolder.append(createNutritionLabel(res.foods[0]));
-
+        data: '{"query": "1 ' + foodName + '"}',
+        error: function () {
+            divHolder.remove();
+        },
+        success: function (res) {
+            divHolder.append(createNutritionLabel(res.foods[0]));
+        }
     });
 }
 
@@ -125,24 +121,16 @@ function createNutritionLabel(foodArr) {
     return div;
 }
 
-$(document).on("click", ".images", function () {
+$(document).on("click", ".images", function() {
     var key = "OhZvd5m3Bz8gbjnHIf8IBQOvBI9szvQy";
-    console.log(this);
     var oldURL = this;
     var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" + $(this).attr("data-name") + "&api_key=" + key + "&limit=1";
     $.ajax({
         url: queryURL,
         method: "GET"
-    })
-        .then(function (response) {
-            var results = response.data;
-            console.log(response);
-
-            $(oldURL).attr("src", results.images.fixed_height.url);
-            console.log(results.images.fixed_height.url);
-            console.log(this);
-
-        })
+    }).then(function (response) {
+        $(oldURL).attr("src", response.data.images.fixed_height.url);
+    });
 })
 
 $("#clear").click(function (event) {
