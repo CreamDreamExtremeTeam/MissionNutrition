@@ -29,6 +29,7 @@ $("#add-limit").on("click", function (event) {
 
     // attempt to parse input. if it fails, do nothing
     var val = parseInt($("#limit-input").val().trim());
+    $("#limit-input").val("");
     if (val == NaN)
         return;
 
