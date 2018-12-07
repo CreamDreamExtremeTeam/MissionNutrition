@@ -312,7 +312,7 @@ footer {
 
 @media only screen and (max-width: 400px){
     .header-4 {
-        width: 9px;
+        width: 90px;
     }
     h2 {
         font-size: 75px;
