@@ -84,6 +84,7 @@ function addFood(foodName, divHolder) {
         data: '{"query": "1 ' + foodName + '"}',
         error: function () {
             divHolder.remove();
+            foodArray.pop();
         },
         success: function (res) {
             divHolder.append(createNutritionLabel(res.foods[0]));
