@@ -8,7 +8,7 @@ var fbConfig = {
 };
 firebase.initializeApp(fbConfig);
 
-//create variable to reference the database
+
 var database = firebase.database();
 
 var limit = 2000;
@@ -27,7 +27,7 @@ $("#add-food").on("click", function (event) {
 $("#add-limit").on("click", function (event) {
     event.preventDefault();
 
-    // attempt to parse input. if it fails, do nothing
+    
     var val = parseInt($("#limit-input").val().trim());
     $("#limit-input").val("");
     if (val == NaN)
@@ -41,11 +41,11 @@ $("#add-limit").on("click", function (event) {
 });
 
 database.ref("limit").on("value", function (snapshot) {
-    // this function should only run when reading the limit
+    
     var sv = snapshot.val();
 
     if (sv.limit === undefined) {
-        // there's no limit defined
+        
         limit = 2000;
     }
     else {
@@ -56,12 +56,12 @@ database.ref("limit").on("value", function (snapshot) {
 });
 
 database.ref().on("child_added", function (snapshot) {
-    // this function should only be called when reading a food
+    
 
-    // storing the snapshot.val() in a variable for convenience
+ 
     var sv = snapshot.val();
 
-    //console.log("Read database food", sv.food);
+   
 
     createFoodDiv(sv.food);
 });
