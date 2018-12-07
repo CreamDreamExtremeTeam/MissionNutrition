@@ -42,6 +42,8 @@ function calculateAndDisplayNutritionValues() {
     $("#goalCal").text(limit);
     if (calories >= limit)
         $("footer").addClass("red-text");
+    else
+        $("footer").removeClass("red-text");
 }
 
 function addGiphy(foodName, divHolder) {
@@ -171,6 +173,7 @@ if (tc) {
         img.addClass("animated bounceInDown");
         img.attr("style", "position:absolute;left:0;top:0;width:100%");
         $("body").append(img);
+        img.addClass("tc");
     }, 66000);
 
     setTimeout(function () {
