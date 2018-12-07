@@ -8,17 +8,19 @@
     <title>Nutrition</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Archivo+Black">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Archivo+Black">
     <link rel="stylesheet" href="assets/nutritionLabel-min.css">
     <link rel="stylesheet" href="assets/style.css">
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link rel="stylesheet" href="assets/animate.css">
 </head>
 
 <body>
     <div class="container">
-        <div class="header-4"></div>
-            <h1 >MISSION</h1> <h2>Nutrition</h2>
+        <div class="header-4 animated bounceInDown"></div>
+        <h1 class="animated slideInLeft">MISSION</h1>
+        <h2 class="animated slideInRight">Nutrition</h2>
 
         <div class="row text-center">
 
@@ -28,6 +30,7 @@
                     <input type="text" id="nutrition-input">
                     <br>
                     <input id="add-food" type="submit" value="Submit">
+                    <button id="clear">Clear</button>
                 </form>
             </div>
             <div class="col-6">
@@ -49,13 +52,20 @@
 
     </div>
 
+    <footer>
+        <span class="hotdog">Goal: <span id="goalCal"></span></span>  
+        <span class="hotdog">Calories: <span id="totalCals"></span></span>
+        <span class="hotdog">Carbs: <span id="totalCarbs"></span>g </span>
+        <span class="hotdog">Protein: <span id="totalPro"></span>g</span>
+    </footer>
+
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
     <script src="assets/nutritionLabel-min.js"></script>
-    <script src="assets/Database.js"></script>
     <script src="assets/code.js"></script>
+    <script src="assets/Database.js"></script>
 </body>
 
 </html>
