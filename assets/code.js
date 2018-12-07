@@ -4,7 +4,7 @@ var calories = 0.0;
 var carbs = 0.0;
 var protein = 0.0;
 
-window.createFoodDiv = function(foodName) {
+window.createFoodDiv = function (foodName) {
     if (foodName === "")
         return;
 
@@ -16,7 +16,7 @@ window.createFoodDiv = function(foodName) {
 
     addGiphy(foodName, block);
     addFood(foodName, block);
-    
+
     this.setTimeout(calculateAndDisplayNutritionValues, 3000);
 }
 
@@ -35,7 +35,7 @@ function calculateAndDisplayNutritionValues() {
 
     protein = 0.0;
     var proteinElems = $("[itemprop=proteinContent]");
-    for (var i = 0; i < proteinElems.length; i ++)
+    for (var i = 0; i < proteinElems.length; i++)
         protein += parseFloat(proteinElems[i].innerText);
     $("#totalPro").text(Math.round(protein));
 
@@ -54,7 +54,6 @@ function addGiphy(foodName, divHolder) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        //console.log(response);
         var results = response.data;
 
         var foodDiv = $("<div>");
@@ -72,8 +71,8 @@ function addGiphy(foodName, divHolder) {
     });
 }
 
-$(document).ajaxError(function() {
-    setTimeout(function() {
+$(document).ajaxError(function () {
+    setTimeout(function () {
         $("#blockHolder > div")[0].remove();
     }, 500);
 });
@@ -92,7 +91,7 @@ function addFood(foodName, divHolder) {
         data: '{"query": "1 ' + foodName + '"}'
     }).then(function (res) {
         divHolder.append(createNutritionLabel(res.foods[0]));
-        
+
     });
 }
 
@@ -154,7 +153,3 @@ $("#clear").click(function (event) {
     $("#blockHolder").empty();
     setTimeout(calculateAndDisplayNutritionValues, 3000);
 });
-
-
-
-
