@@ -158,26 +158,3 @@ $("#clear").click(function (event) {
 
 
 
-
-var tc = false;
-var audio;
-if (tc) {
-    setTimeout(function () {
-        audio = new Audio("assets/images/Audio/bgaudio.mp3");
-        audio.play();
-    }, 60000);
-
-    setTimeout(function () {
-        var img = $("<img>");
-        img.attr("src", "assets/images/MIC.gif");
-        img.addClass("animated bounceInDown");
-        img.attr("style", "position:absolute;left:0;top:0;width:100%");
-        $("body").append(img);
-        img.addClass("tc");
-    }, 66000);
-
-    setTimeout(function () {
-        $(".tc").addClass("zoomOutUp")
-        audio.pause();
-    }, 70000);
-}
