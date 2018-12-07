@@ -309,3 +309,29 @@ footer {
         }
 
 }
+
+@media only screen and (max-width: 400px){
+    .header-4 {
+        width: 9px;
+    }
+    h2 {
+        font-size: 75px;
+    }
+    
+#nutrition-input {
+    font-size: 12px;
+}
+#limit-input {
+    font-size: 12px;
+}
+
+label {
+    font-size: 30px;
+}
+#add-food {
+    margin-left: 0%;
+}
+#add-limit {
+    margin-left: 0%;
+}
+}
